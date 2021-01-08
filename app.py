@@ -12,6 +12,7 @@ import uvicorn
 from fastapi import FastAPI
 from pydantic import BaseModel
 from typing import Optional
+from pymongo import MongoClient
 
 
 app = FastAPI()
@@ -42,4 +43,24 @@ async def get_name(number : int, name: Optional[str],age : int):
     return {'Welcome To Krish Youtube Channel': f'{name}'}
 
 
+# creation of object MongoClient
+client = MongoClient()
+
+# Connect with the portnumber and host
+client = MongoClient("mongodb+srv://asanka:asanka96@cluster0.pelc0.mongodb.net/test")
+
+# Access database
+mydatabase = client['Students989']
+
+# Access collection of the database
+collection = mydatabase['studentscores']
+data = [
+    {"user": "Krish", "subject": "Database", "score": 80},
+    {"user": "Amit", "subject": "JavaScript", "score": 90},
+    {"user": "Amit", "title": "Database", "score": 85},
+    {"user": "Krish", "title": "JavaScript", "score": 75},
+    {"user": "Amit", "title": "Data Science", "score": 60},
+    {"user": "Krish", "title": "Data Science", "score": 95}]
+
+collection.insert_many(data)
 
