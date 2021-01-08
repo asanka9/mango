@@ -27,3 +27,4 @@ starlette==0.13.6
 urllib3==1.26.2
 uvicorn==0.13.3
 uvloop
+httptools
