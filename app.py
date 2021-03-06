@@ -47,7 +47,7 @@ async def get_name(number : int, name: Optional[str],age : int):
 client = MongoClient()
 
 # Connect with the portnumber and host
-client = MongoClient("mongodb+srv://asanka:asanka96@cluster0.pelc0.mongodb.net/test")
+client = MongoClient("mongodb+srv://asanka:asanka96@scrapper.pelc0.mongodb.net/test")
 
 # Access database
 mydatabase = client['Students989']
